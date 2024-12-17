@@ -19,18 +19,9 @@ import NavBar from "@/components/NavBar.vue";
 </script>
 
 <style scoped>
-#basicLayout .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #efefef;
-}
-
 #basicLayout .content {
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   background: linear-gradient(to left, lightblue, #fff);
 }
 
@@ -39,5 +30,15 @@ import NavBar from "@/components/NavBar.vue";
   color: unset;
   padding-inline: 20px;
   margin-bottom: 16px;
+}
+
+#basicLayout .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #efefef;
+  height: 60px;
 }
 </style>
