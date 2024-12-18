@@ -34,17 +34,17 @@ const items = ref<MenuProps["items"]>([
     title: "主页",
   },
   {
-    key: "/login",
+    key: "/user/login",
     label: "用户登录",
     title: "用户登录",
   },
   {
-    key: "/register",
+    key: "/user/register",
     label: "用户注册",
     title: "用户注册",
   },
   {
-    key: "/management",
+    key: "/admin/management",
     icon: () => h(CrownOutlined),
     label: "用户管理",
     title: "用户管理",
