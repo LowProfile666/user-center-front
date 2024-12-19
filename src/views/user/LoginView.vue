@@ -36,6 +36,7 @@ import { reactive } from "vue";
 import { userLogin } from "@/api/user/user";
 import { message } from "ant-design-vue";
 import { useRouter } from "vue-router";
+import { useLoginUserStore } from "@/store/user/useLoginUserStore";
 
 interface UserForm {
   userAccount: string;
@@ -43,6 +44,7 @@ interface UserForm {
 }
 
 const router = useRouter();
+const loginUserStore = useLoginUserStore();
 
 const userForm = reactive<UserForm>({
   userAccount: "",
@@ -51,9 +53,12 @@ const userForm = reactive<UserForm>({
 
 const submitLogin = async () => {
   const res = await userLogin(userForm);
-  if (res.data) {
+  if (res.data.code === 2000 && res.data.data) {
     message.success("登录成功");
-    router.replace("/index");
+    loginUserStore.setLoginUser(res.data.data);
+    await router.replace("/index");
+  } else {
+    message.error(res.data.msg);
   }
 };
 </script>

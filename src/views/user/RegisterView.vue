@@ -66,9 +66,11 @@ const submitRegister = async () => {
   }
 
   const res = await userRegister(userForm);
-  if (res.data !== undefined) {
-    message.success("注册成功" + res.data);
+  if (res.data.code === 2000) {
+    message.success("注册成功");
     router.replace("/user/login");
+  } else {
+    message.error(res.data.msg + ", " + res.data.detail);
   }
 };
 </script>

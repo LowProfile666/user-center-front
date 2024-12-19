@@ -6,8 +6,7 @@ import axios from "axios";
  withCredentials: 允许跨域请求时携带凭证（如 Cookies）。
  */
 const myAxios = axios.create({
-  // baseURL: "http://localhost:8080",
-  baseURL: "http://127.0.0.1:4523/m1/5632477-5312230-default/",
+  baseURL: process.env.VUE_APP_API_URL,
   timeout: 10000,
   withCredentials: true,
 });

@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/admin/management",
     name: "management",
-    component: HomeView,
+    component: import("@/views/admin/ManagementView.vue"),
   },
 ];
 

@@ -41,7 +41,7 @@ export const userLogout = async (params: any) => {
  */
 export const getCurrentUser = async () => {
   return myAxios.request({
-    url: "/user/current",
+    url: "/user/get_current_user",
     method: "GET",
   });
 };
@@ -50,12 +50,12 @@ export const getCurrentUser = async () => {
  * 获取用户列表
  * @param username
  */
-export const searchUsers = async (username: any) => {
+export const searchUsers = async (nickname: any) => {
   return myAxios.request({
     url: "/user/search",
     method: "GET",
     params: {
-      username,
+      nickname,
     },
   });
 };

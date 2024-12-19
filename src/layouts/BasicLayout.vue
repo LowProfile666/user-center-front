@@ -16,20 +16,29 @@
 
 <script setup lang="ts">
 import NavBar from "@/components/NavBar.vue";
+import { useLoginUserStore } from "@/store/user/useLoginUserStore";
+
+const loginUserStore = useLoginUserStore();
+loginUserStore.fetchLoginUser();
 </script>
 
 <style scoped>
 #basicLayout .content {
   padding: 20px;
   margin-bottom: 60px;
-  background: linear-gradient(to left, lightblue, #fff);
+  background-color: #efefef;
+  margin-top: 60px;
 }
 
 #basicLayout .header {
+  position: fixed; /* 固定在页面顶部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 确保 header 位于最上层 */
   background: #ffffff;
   color: unset;
   padding-inline: 20px;
-  margin-bottom: 16px;
 }
 
 #basicLayout .footer {

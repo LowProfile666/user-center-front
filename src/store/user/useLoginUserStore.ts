@@ -12,7 +12,7 @@ export const useLoginUserStore = defineStore("loginUser", () => {
   // 获取变量信息的方法
   async function fetchLoginUser() {
     const res = await getCurrentUser();
-    if (res.data.code === 0 && res.data.data) {
+    if (res.data.code === 2000 && res.data.data) {
       loginUser.value = res.data.data;
     }
   }
